@@ -1,0 +1,8 @@
+{
+  "name": "mailgrid",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "repository": "git@github.com:mailgrid/mailgrid.git",
+  "author": "Jorge Murta <contact@jorgemurta.com>",
+  "license": "MIT"
+}
