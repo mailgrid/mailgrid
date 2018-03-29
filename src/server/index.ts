@@ -1,6 +1,9 @@
 import * as express from 'express'
 import {Nuxt, Builder} from 'nuxt'
+import SMTPServer from './smtp'
+
 const app = express()
+const smtpServer = new SMTPServer(2525)
 let config = require('../../nuxt.config.js')
 
 config.dev = !(process.env.NODE_ENV === 'production')
@@ -15,4 +18,7 @@ if (config.dev) {
 
 app.use(nuxt.render)
 
-app.listen(3000, () => console.log('Example app listening on port 3000!'))
+app.listen(3000, () => {
+    smtpServer.start()
+    console.log('Application is Running')
+})
