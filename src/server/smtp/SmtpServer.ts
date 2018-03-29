@@ -1,9 +1,6 @@
 const NodeMailerSMTPServer = require('smtp-server').SMTPServer;
 
-const SERVER_PORT = 2525;
-const SERVER_HOST = false;
-
-class SMTPServer {
+export default class SmtpServer {
 
     protected host:any = false
     protected server:any
@@ -29,21 +26,21 @@ class SMTPServer {
         return this.server.listen(this.port, this.host);
     }
 
-    protected onAuth(auth, session, callback): any {
+    protected onAuth(auth: any, session: any, callback: any): any {
         return callback(null, {
             user: 'userdata'
         })
     }
 
-    protected onMailFrom(address, session, callback): any {
+    protected onMailFrom(address: any, session: any, callback: any): any {
         callback()
     }
 
-    protected onRcptTo(address, session, callback): any {
+    protected onRcptTo(address: any, session: any, callback: any): any {
         callback()
     }
 
-    protected onData(stream, session, callback): any {
+    protected onData(stream: any, session: any, callback: any): any {
         stream.pipe(process.stdout)
         stream.on('end', () => {
             let err;
@@ -56,10 +53,8 @@ class SMTPServer {
         });
     }
 
-    protected onError(err): void {
+    protected onError(err: any): void {
         console.log('Error occurred');
         console.log(err);
     }
 }
-
-export default SMTPServer

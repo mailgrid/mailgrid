@@ -15,7 +15,14 @@ module.exports = {
       ]
     },
     
-    plugins: ['~/plugins/vuetify.js'],
+    plugins: [
+      '~/plugins/vuetify.js',
+      '~/plugins/socket.io.js'
+    ],
+
+    env: {
+      WS_URL: process.env.WS_URL || 'http://localhost:3000'
+    },
 
     srcDir: process.cwd() + '/src/client',
     buildDir: process.cwd() + '/dist/client'

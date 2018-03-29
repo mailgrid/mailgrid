@@ -2,7 +2,7 @@
     <v-app>
         <v-toolbar color="teal" app dark extended>
             <v-toolbar-title>
-                <img width="98px" style="margin-left:15px;" src="~/assets/mailgrid-logo-text.png" alt="MailGrid">
+                <img width="98px" height="20.41px" style="margin-left:15px;" src="~/assets/mailgrid-logo-text.png" alt="MailGrid">
             </v-toolbar-title>
             <v-spacer></v-spacer>
             <v-btn icon>
